@@ -43,9 +43,8 @@ class MavrosOffboardPositions(object):
         self.takeoff = False
 
 
-
     def create_wp_list(self):
-        self.waypoints= [self.create_pose(0.2),self.create_pose(0.5),self.create_pose(0.7),self.create_pose(1.0),self.create_pose(1.0,1.0,1.0)]
+        self.waypoints= [self.create_pose(0.2),self.create_pose(1.0),self.create_pose(1.0,1.0,1.0)]
 
 
     def wait_for_connection(self):
@@ -219,6 +218,6 @@ class MavrosOffboardPositions(object):
 if __name__=="__main__":
     #do this
     test = MavrosOffboardPositions()
-    rospy.loginfo("Running good locations")
+    rospy.loginfo("Running bad locations")
     input("Press any key to start")
     test.run()

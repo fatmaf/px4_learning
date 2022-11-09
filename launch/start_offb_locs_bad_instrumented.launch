@@ -1,0 +1,8 @@
+<launch>
+
+<include file="$(find px4)/launch/mavros_posix_sitl.launch">
+    </include>
+
+    
+    <node pkg="offboard_py" type="offb_node_locs_bad.py" name="offb_node_locs_bad_py" required="true" output="screen"><remap from="mavros/local_position/pose" to="mavros/local_position/pose_mon" /><remap from="uav/takeoff" to="uav/takeoff_mon" /></node>
+</launch>

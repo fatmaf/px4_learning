@@ -1,0 +1,26 @@
+nodes: # here we list the nodes we are going to monitor
+  - node:
+      name: offb_node_locs_py
+      package: offboard_py
+      path: /home/fatma/work/code/ros/ros1/px4_ws/src/px4_offboard_py/launch/start_offb_locs.launch
+
+monitors: # here we list the monitors we are going to generate
+  - monitor:
+      id: uav_property1_online_mon
+      log: /home/fatma/work/code/ros/ros1/px4_ws/src/px4_offboard_py/ROSMonitoringConfigs/property1.txt # file where the monitor will log the observed events
+      silent: False # we let the monitor to print info during its execution
+      oracle: # the oracle running and ready to check the specification (localhost in this case)
+        port: 8080 # the port where it is listening
+        url: 127.0.0.1 # the url where it is listening
+        action: nothing # the oracle will not change the message
+      topics: # the list of topics this monitor is going to intercept
+        - name: mavros/local_position/pose # name of the topic
+          type: geometry_msgs.msg.PoseStamped # type of the topic
+          action: log
+          subscribers:
+            - offb_node_locs_py
+        - name: uav/takeoff
+          type: std_msgs.msg.String
+          action: log
+          publishers:
+            - offb_node_locs_py
