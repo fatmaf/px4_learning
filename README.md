@@ -1,3 +1,5 @@
+*Assumption* _ROSMonitoring is used to generate the monitor package which is not part of this repo. The config files can be found in ROSMonitoringConfigs_
+
 # Launching the PX4 Simulation 
 
 `cd <PX4-Autopilot_clone>`
