@@ -21,11 +21,9 @@
 `export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/simulation/gazebo/sitl_gazebo`
 
 #### For ROSMonitoring with no user input 
-This or the launch file 
-`roslaunch px4 posix_sitl.launch`
 
-or `roslaunch rosmondemo start_offb_locs_instrumented.launch`
-
+* where it is true `roslaunch rosmondemo start_offb_locs_instrumented.launch` (dont forget to press enter because I wanted to wait)
+* where it is  not true `roslaunch rosmondemo start_offb_locs_bad_instrumented.launch`
 
 
 ##### Starting the monitoring stuff 
