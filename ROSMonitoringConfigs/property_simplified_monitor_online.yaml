@@ -1,13 +1,13 @@
 nodes: # here we list the nodes we are going to monitor
   - node:
-      name: offb_node_locs_py
+      name: monitor_verdict_visual
       package: rosmondemo
-      path: /home/robotlab/code/ros/px4_ws/src/rosmondemo/launch/start_offb_locs.launch
+      path: /home/robotlab/code/ros/px4_ws/src/rosmondemo/launch/monitor_verdict_visual.launch
 
 monitors: # here we list the monitors we are going to generate
   - monitor:
-      id: uav_property1_online_mon
-      log: /home/robotlab/code/ros/px4_ws/src/rosmondemo/ROSMonitoringConfigs/property1.txt # file where the monitor will log the observed events
+      id: simplified_property
+      log: /home/robotlab/code/ros/px4_ws/src/rosmondemo/ROSMonitoringConfigs/simplified_property.txt # file where the monitor will log the observed events
       silent: False # we let the monitor to print info during its execution
       oracle: # the oracle running and ready to check the specification (localhost in this case)
         port: 8080 # the port where it is listening
@@ -17,10 +17,5 @@ monitors: # here we list the monitors we are going to generate
         - name: mavros/local_position/pose # name of the topic
           type: geometry_msgs.msg.PoseStamped # type of the topic
           action: log
-          subscribers:
-            - offb_node_locs_py
-        - name: uav/takeoff
-          type: std_msgs.msg.String
-          action: log
-          publishers:
-            - offb_node_locs_py
+
+

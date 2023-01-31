@@ -1,0 +1,8 @@
+<launch>
+    
+    <include file="$(find px4)/launch/mavros_posix_sitl.launch">
+    </include>
+
+    
+    <node pkg="rosmondemo" type="monitor_verdict_visual.py" name="monitor_verdict_visual_py" required="true" output="screen" />
+</launch>

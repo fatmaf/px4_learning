@@ -5,14 +5,23 @@
 `cd <PX4-Autopilot_clone>`
 
 `source ~/catkin_ws/devel/setup.bash    # (optional)`
+
 `source Tools/simulation/gazebo/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default`
+
 `export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)`
+
 `export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/simulation/gazebo/sitl_gazebo`
+
+This or the launch file 
+`roslaunch px4 posix_sitl.launch`
+
+or `roslaunch rosmondemo start_offb_locs_instrumented.launch`
 
 
 
 ## Starting the monitoring stuff 
 
 ``./oracle.py  --online --property uav_property1 --port 8080 --dense``
+
+
 `` roslaunch monitor run.launch ``
-````

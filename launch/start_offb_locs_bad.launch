@@ -5,5 +5,5 @@
     </include>
 
     <!-- Our node to control the drone -->
-    <node pkg="offboard_py" type="offb_node_locs_bad.py" name="offb_node_locs_bad_py" required="true" output="screen" />
+    <node pkg="rosmondemo" type="offb_node_locs_bad.py" name="offb_node_locs_bad_py" required="true" output="screen" />
 </launch>
