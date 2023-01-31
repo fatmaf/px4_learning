@@ -4,7 +4,7 @@
 import oracle
 
 # property to verify
-PROPERTY = "(once(historically[0:10]{altitude >= 0.3, altitude<=0.7}))"
+PROPERTY = "(once(historically[0:10]{altitude >= 6, altitude<=7}))"
 
 # predicates used in the property (initialization for time 0)
 predicates = dict(

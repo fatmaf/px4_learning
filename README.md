@@ -1,6 +1,14 @@
 *Assumption* _ROSMonitoring is used to generate the monitor package which is not part of this repo. The config files can be found in ROSMonitoringConfigs_
+* Install PX4 
+* ROS workspace with PX4
+* Download the following packages:
+  * https://github.com/fatmaf/px4_offboard_py
+  * https://github.com/fatmaf/px4_rosmondemo_monitor
+* Create a new catkin workspace and put the above two in the source folder (src)
+* Catkin make 
+* Download ROSMonitoring - copy the file uav_property1.py from rosmondemo/ROSMonitoringConfigs to the oracle folder 
 
-# Launching the PX4 Simulation 
+### Launching the PX4 Simulation 
 
 `cd <PX4-Autopilot_clone>`
 
@@ -12,6 +20,7 @@
 
 `export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/simulation/gazebo/sitl_gazebo`
 
+#### For ROSMonitoring with no user input 
 This or the launch file 
 `roslaunch px4 posix_sitl.launch`
 
@@ -19,9 +28,17 @@ or `roslaunch rosmondemo start_offb_locs_instrumented.launch`
 
 
 
-## Starting the monitoring stuff 
+##### Starting the monitoring stuff 
 
 ``./oracle.py  --online --property uav_property1 --port 8080 --dense``
 
 
 `` roslaunch monitor run.launch ``
+
+
+#### For ROSMonitoring with user input 
+
+* get the QGroundControl App from the PX4 website 
+* run `roslaunch px4 posix_sitl.launch`
+* start the app
+* start the monitor 
