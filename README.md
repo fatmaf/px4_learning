@@ -38,7 +38,8 @@ or `roslaunch rosmondemo start_offb_locs_instrumented.launch`
 
 #### For ROSMonitoring with user input 
 
-* get the QGroundControl App from the PX4 website 
-* run `roslaunch px4 posix_sitl.launch`
+get the QGroundControl App from the PX4 website 
+* run `roslaunch rosmondemo monitor_verdict_visual_instrumented.launch`
 * start the app
-* start the monitor 
+* start the monitor `` roslaunch monitor run.launch ``
+* ``./oracle.py  --online --property uav_property_simplified --port 8080 --dense``
